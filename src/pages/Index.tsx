@@ -163,6 +163,53 @@ const Index = () => {
                 Укажите ваши данные для точного подбора одежды
               </p>
             </div>
+            
+            {/* Схема измерений */}
+            <div className="mb-8">
+              <Card className="border-luxury-gray/20 bg-luxury-white">
+                <CardContent className="p-6">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <h3 className="font-playfair text-2xl font-semibold text-luxury-black mb-4">
+                        Как правильно снимать мерки
+                      </h3>
+                      <ul className="space-y-3 font-source text-luxury-gray">
+                        <li className="flex items-start">
+                          <Icon name="Circle" size={16} className="text-luxury-gold mt-1 mr-3 flex-shrink-0" />
+                          <span><strong className="text-luxury-black">Обхват груди:</strong> измеряется по самым выступающим точкам груди</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Icon name="Circle" size={16} className="text-luxury-gold mt-1 mr-3 flex-shrink-0" />
+                          <span><strong className="text-luxury-black">Обхват талии:</strong> в самом узком месте талии</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Icon name="Circle" size={16} className="text-luxury-gold mt-1 mr-3 flex-shrink-0" />
+                          <span><strong className="text-luxury-black">Обхват бедер:</strong> по самым выступающим точкам ягодиц</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Icon name="Circle" size={16} className="text-luxury-gold mt-1 mr-3 flex-shrink-0" />
+                          <span><strong className="text-luxury-black">Рост:</strong> измеряется без обуви, спиной к стене</span>
+                        </li>
+                      </ul>
+                      <div className="mt-6 p-4 bg-luxury-warm/30 rounded-lg">
+                        <p className="font-source text-sm text-luxury-black">
+                          <Icon name="Lightbulb" size={16} className="inline text-luxury-gold mr-2" />
+                          <strong>Совет:</strong> Для точности измерений используйте сантиметровую ленту и попросите помощи у другого человека
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex justify-center">
+                      <img
+                        src="/img/51a04d36-dd0b-474d-b19d-429d1c2b0b61.jpg"
+                        alt="Схема измерений тела"
+                        className="w-full max-w-sm h-auto rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            
             <Card className="border-luxury-gray/20">
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
