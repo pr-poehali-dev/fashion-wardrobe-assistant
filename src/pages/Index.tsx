@@ -11,6 +11,9 @@ const Index = () => {
   const [bodyParams, setBodyParams] = useState({
     height: 170,
     weight: 60,
+    chest: 90,
+    waist: 75,
+    hips: 95,
     size: 'M'
   });
 
@@ -162,7 +165,8 @@ const Index = () => {
             </div>
             <Card className="border-luxury-gray/20">
               <CardContent className="p-8">
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* Основные параметры */}
                   <div className="space-y-4">
                     <label className="font-source font-semibold text-luxury-black">Рост (см)</label>
                     <div className="space-y-2">
@@ -195,10 +199,66 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Обхват груди */}
                   <div className="space-y-4">
-                    <label className="font-source font-semibold text-luxury-black">Размер</label>
-                    <div className="flex gap-2 justify-center">
-                      {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
+                    <label className="font-source font-semibold text-luxury-black">Обхват груди (см)</label>
+                    <div className="space-y-2">
+                      <Slider
+                        value={[bodyParams.chest]}
+                        onValueChange={(value) => setBodyParams({...bodyParams, chest: value[0]})}
+                        min={70}
+                        max={130}
+                        step={1}
+                        className="w-full"
+                      />
+                      <div className="text-center font-source text-luxury-gold font-bold text-lg">
+                        {bodyParams.chest} см
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Обхват талии */}
+                  <div className="space-y-4">
+                    <label className="font-source font-semibold text-luxury-black">Обхват талии (см)</label>
+                    <div className="space-y-2">
+                      <Slider
+                        value={[bodyParams.waist]}
+                        onValueChange={(value) => setBodyParams({...bodyParams, waist: value[0]})}
+                        min={60}
+                        max={120}
+                        step={1}
+                        className="w-full"
+                      />
+                      <div className="text-center font-source text-luxury-gold font-bold text-lg">
+                        {bodyParams.waist} см
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Обхват бедер */}
+                  <div className="space-y-4">
+                    <label className="font-source font-semibold text-luxury-black">Обхват бедер (см)</label>
+                    <div className="space-y-2">
+                      <Slider
+                        value={[bodyParams.hips]}
+                        onValueChange={(value) => setBodyParams({...bodyParams, hips: value[0]})}
+                        min={70}
+                        max={130}
+                        step={1}
+                        className="w-full"
+                      />
+                      <div className="text-center font-source text-luxury-gold font-bold text-lg">
+                        {bodyParams.hips} см
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Размер одежды */}
+                  <div className="space-y-4">
+                    <label className="font-source font-semibold text-luxury-black">Размер одежды</label>
+                    <div className="flex gap-2 justify-center flex-wrap">
+                      {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (
                         <Button
                           key={size}
                           variant={bodyParams.size === size ? "default" : "outline"}
